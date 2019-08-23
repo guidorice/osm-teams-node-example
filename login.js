@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 const PORT = process.env.PORT || 7171
-const APP_URL=`http://localhost:${PORT}`
+const APP_URL = `http://localhost:${PORT}`
 
 const credentials = {
   client: {
@@ -26,7 +26,7 @@ var generateState = function (length) {
 }
 
 function login (req, res) {
-  let state = generateState(24)
+  const state = generateState(24)
   const authorizationUri = oauth2.authorizationCode.authorizeURL({
     redirect_uri: `${APP_URL}/callback`,
     scope: 'openid offline',
@@ -59,7 +59,7 @@ async function callback (req, res) {
 
     try {
       const result = await oauth2.authorizationCode.getToken(options)
-      
+
       // We get an id token that contains the user information
       // "sub" is the osm id of the user that logged in
       const { sub, preferred_username, picture } = jwt.decode(result.id_token)
@@ -68,11 +68,11 @@ async function callback (req, res) {
       // a database or in memory for the user. We store it here in the session
       // The user id is "sub", and the "result" contains both the access token
       // and the refresh token
-      
+
       // use the access token to sign requests to the osm teams api
       // and the refresh token to request new access tokens when they expire
       req.session.access_token = result.access_token
-      
+
       // get information from the id token
       req.session.uid = sub
       req.session.username = preferred_username

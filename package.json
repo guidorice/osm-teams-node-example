@@ -4,6 +4,8 @@
   "description": "A simple Node app built on Express",
   "main": "server.js",
   "scripts": {
+    "lint": "eslint .",
+    "lintfix": "eslint . --fix",
     "start": "nodenv ."
   },
   "dependencies": {

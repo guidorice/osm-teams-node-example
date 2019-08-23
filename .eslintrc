@@ -1,6 +1,9 @@
 {
-  "extends": "standard"
+  "extends": "standard",
   "env": {
     "node": true
+  },
+  "rules": {
+    "camelcase": "off"
   }
 }
