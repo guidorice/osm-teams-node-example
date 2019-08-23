@@ -1,0 +1,76 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OSM Teams Node Example</title>
+    <meta name="description" content="A cool mapping.team integration">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Mapping Team User Guide
+      </h1>
+
+    <main>
+      <p>
+        <strong>mapping.team</strong> is an index of OpenStreetMap teams. It allows other mappers to find their local communities, professional mappers to highlight the work they're doing,
+        and for OSM developers to integrate applications with one another. 
+      </p>
+      
+      <p>
+        At the core of <strong>mapping.team</strong> is an OAuth2 server that builds new capabilities on top of the OpenStreetMap login. As a developer of say, a tasking manager application, you can
+        connect to <strong>mapping.team</strong> and have users create, update and share teams made in your application with other applications in the ecosystem. This allows for teams and communities to
+        persist across different apps.
+      </p>
+      
+      <p>
+        This application is a barebones demonstration of how the <strong>mapping.team</strong> authentication and API work.
+      </p>
+      
+      <hr />
+      
+      <% if (!user) { %>
+      <section style="padding:30px; border: 2px solid red; margin:30px">
+            <p class="bold">Oh hi,</p>
+            <a href="/login">Connect mapping.team :)</a>
+      </section>
+    <% } %>
+
+      <% if (user) { %>
+      <section style="padding:30px; border: 2px solid red; margin:30px">
+        Welcome, <%= user %> !!
+        <div id="team-list" />
+      </section>
+      <% } %>
+    </main>
+
+    <footer>
+      Made by OpenStreetMap developers 🌍
+    </footer>
+
+    <script>
+      <% if (user) { %>
+        const uid = '<%= uid %>'
+        const accessToken = '<%= accessToken %>'
+      <% } %>
+    </script>
+  </body>
+</html>
+

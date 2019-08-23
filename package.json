@@ -1,0 +1,38 @@
+{
+  "name": "osm-teams-node-example",
+  "version": "0.0.1",
+  "description": "A simple Node app built on Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodenv ."
+  },
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "jsonwebtoken": "^8.5.1",
+    "simple-oauth2": "^2.2.1"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/mapping-team-starter"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "express",
+    "openstreetmap",
+    "community"
+  ],
+  "devDependencies": {
+    "eslint": "^6.2.1",
+    "eslint-config-standard": "^14.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "node-env-run": "^3.0.2"
+  }
+}
