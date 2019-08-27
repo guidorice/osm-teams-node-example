@@ -1,6 +1,6 @@
 # OSM Teams API - Node/Express
 
-This app demonstrates how to integrate with mapping.team, the index of OpenStreetMap teams. It uses Node.js/Express and [simple-oauth2](https://npmjs.com/simple-oauth2) to create the connection.
+This app demonstrates how to integrate with [mapping.team](https://dev.mapping.team), the index of OpenStreetMap teams. It uses Node.js/Express and [simple-oauth2](https://npmjs.com/simple-oauth2) to create the connection. `mapping.team` is an instance of the [OSM Teams API](https://github.com/developmentseed/osm-teams)
 
 ## Requirements
 - Node.js v8+
