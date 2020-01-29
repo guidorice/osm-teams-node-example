@@ -8,7 +8,7 @@ const credentials = {
     secret: process.env.CLIENT_SECRET
   },
   auth: {
-    tokenHost: 'https://dev.mapping.team/',
+    tokenHost: 'http://localhost:8989/',
     tokenPath: '/hyauth/oauth2/token',
     authorizePath: '/hyauth/oauth2/auth'
   }
@@ -72,6 +72,7 @@ async function callback (req, res) {
       // use the access token to sign requests to the osm teams api
       // and the refresh token to request new access tokens when they expire
       req.session.access_token = result.access_token
+      console.log(result.access_token)
 
       // get information from the id token
       req.session.uid = sub
